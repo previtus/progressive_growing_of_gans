@@ -1,0 +1,19 @@
+Dataset preparation 
+
+CIFAR-10 example:
+Download dataset from https://www.cs.toronto.edu/~kriz/cifar.html (I got the CIFAR-10 python version) + unzip it to some_folder
+- Run: python h5tool.py create_cifar10 cifar-10-32x32.h5 some_folder/cifar-10-batches-py/
+- Afterwards move the cifar-10-32x32.h5 file to /datasets
+- Prepare the code in config.py
+- On line 171-173 allow this setting:
+	# Section 6.5: "CIFAR10 inception scores"
+	if 1:
+	   run_desc = 'cifar-10-32x32'
+- And set all the other conditions to if 0:
+
+Custom dataset:
+python h5tool.py create_custom whatever.h5 folder_with_images/
+- Tricky part, now we have to the config.py … and I don’t know exactly how.
+train.update(...), G.update(...), D.update(...), loss.update(...) are updates to the default settings (described above)
+- Possibly copy the setting from some other similar run, specify your h5 file and correct resolution.
+

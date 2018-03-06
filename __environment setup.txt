@@ -1,0 +1,36 @@
+# Check if you can call python 2.7 and import all of these:
+
+import os
+import sys
+import time
+import glob
+import shutil
+import operator
+import numpy as np
+import misc
+import config
+import theano
+from theano import tensor as T
+import lasagne
+import dataset
+import scipy.ndimage
+
+import network
+
+
+import sys
+import imp
+import inspect
+import copy
+import collections
+import numpy as np
+import theano
+from theano import tensor as T
+import lasagne
+import cPickle
+
+
+from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, NINLayer
+from lasagne.layers import Upscale2DLayer, Pool2DLayer, GlobalPoolLayer, MaxPool2DLayer
+from lasagne.layers import ReshapeLayer, ElemwiseSumLayer, ConcatLayer, FlattenLayer
+from lasagne.layers import NonlinearityLayer, ScaleLayer
