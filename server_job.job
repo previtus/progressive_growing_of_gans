@@ -1,0 +1,23 @@
+#!/bin/bash
+#SBATCH -p GPU
+#SBATCH -t 10:00:00
+#SBATCH --gres=gpu:p100:2
+
+#echo commands to stdout
+set -x
+
+#module load cuda
+#module load theano/0.8.2
+#source $THEANO_ENV/bin/activate
+
+module load cuda
+module load anaconda/4.0
+source activate gan_nvidia_theano
+
+cd /home/vruzicka/progressive_growing_of_gans
+
+
+python train.py
+
+# run this with: sbatch server_job.job
+
